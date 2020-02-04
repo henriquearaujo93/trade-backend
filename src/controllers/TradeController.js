@@ -2,8 +2,6 @@ const Trade = require('../models/Trade');
 
 module.exports = {
     store (request, response) {
-
-        next();
     
         const { paper, entryDate, endDate, openDays, entryValue, exitValue, diference, madeProfit } = request.body;
 
@@ -28,8 +26,6 @@ module.exports = {
     },
 
     list (request, response) {
-
-        next();
          
        Trade.find(function(err, result) {
             if(err){
@@ -44,8 +40,6 @@ module.exports = {
 
     destroy (request, response) {
 
-        next();
-
         Trade.findOneAndDelete({_id:request.params.id}, (err, result) => {
             if(err){
                 console.log(err);
@@ -58,8 +52,6 @@ module.exports = {
     },
 
     edit (request, response){
-
-        next();
 
         const { paper, entryDate, endDate, openDays, entryValue, exitValue, diference, madeProfit } = request.body;
 

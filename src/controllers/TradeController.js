@@ -2,6 +2,9 @@ const Trade = require('../models/Trade');
 
 module.exports = {
     store (request, response) {
+
+        response.header("Access-Control-Allow-Origin", "https://trade-back.herokuapp.com/");
+        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     
         const { paper, entryDate, endDate, openDays, entryValue, exitValue, diference, madeProfit } = request.body;
 
@@ -26,6 +29,9 @@ module.exports = {
     },
 
     list (request, response) {
+
+        response.header("Access-Control-Allow-Origin", "https://trade-back.herokuapp.com/");
+        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
          
        Trade.find(function(err, result) {
             if(err){
@@ -40,6 +46,9 @@ module.exports = {
 
     destroy (request, response) {
 
+        response.header("Access-Control-Allow-Origin", "https://trade-back.herokuapp.com/");
+        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
         Trade.findOneAndDelete({_id:request.params.id}, (err, result) => {
             if(err){
                 console.log(err);
@@ -52,6 +61,9 @@ module.exports = {
     },
 
     edit (request, response){
+
+        response.header("Access-Control-Allow-Origin", "https://trade-back.herokuapp.com/");
+        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
         const { paper, entryDate, endDate, openDays, entryValue, exitValue, diference, madeProfit } = request.body;
 

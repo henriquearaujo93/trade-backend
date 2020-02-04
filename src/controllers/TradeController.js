@@ -3,10 +3,6 @@ const Trade = require('../models/Trade');
 module.exports = {
     store (request, response) {
 
-        response.setHeader("Access-Control-Allow-Origin", "*");
-        response.setHeader("Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE");
-        response.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
         next();
     
         const { paper, entryDate, endDate, openDays, entryValue, exitValue, diference, madeProfit } = request.body;
@@ -33,10 +29,6 @@ module.exports = {
 
     list (request, response) {
 
-        response.header("Access-Control-Allow-Origin", "*");
-        response.setHeader("Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE");
-        response.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
         next();
          
        Trade.find(function(err, result) {
@@ -52,10 +44,6 @@ module.exports = {
 
     destroy (request, response) {
 
-        response.header("Access-Control-Allow-Origin", "*");
-        response.setHeader("Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE");
-        response.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
         next();
 
         Trade.findOneAndDelete({_id:request.params.id}, (err, result) => {
@@ -70,10 +58,6 @@ module.exports = {
     },
 
     edit (request, response){
-
-        response.header("Access-Control-Allow-Origin", "*");
-        response.setHeader("Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE");
-        response.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
 
         next();
 

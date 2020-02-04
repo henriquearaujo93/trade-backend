@@ -3,7 +3,7 @@ const Trade = require('../models/Trade');
 module.exports = {
     store (request, response) {
 
-        response.setHeader("Access-Control-Allow-Origin", "../../web");
+        response.setHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE");
         response.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
 
@@ -33,7 +33,7 @@ module.exports = {
 
     list (request, response) {
 
-        response.header("Access-Control-Allow-Origin", "../../web");
+        response.header("Access-Control-Allow-Origin", "*");
         response.setHeader("Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE");
         response.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
 
@@ -52,7 +52,7 @@ module.exports = {
 
     destroy (request, response) {
 
-        response.header("Access-Control-Allow-Origin", "../../web");
+        response.header("Access-Control-Allow-Origin", "*");
         response.setHeader("Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE");
         response.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
 
@@ -71,7 +71,7 @@ module.exports = {
 
     edit (request, response){
 
-        response.header("Access-Control-Allow-Origin", "../../web");
+        response.header("Access-Control-Allow-Origin", "*");
         response.setHeader("Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE");
         response.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
 

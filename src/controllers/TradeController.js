@@ -3,8 +3,11 @@ const Trade = require('../models/Trade');
 module.exports = {
     store (request, response) {
 
-        response.header("Access-Control-Allow-Origin", "https://trade-back.herokuapp.com/");
-        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        response.setHeader("Access-Control-Allow-Origin", "../../web");
+        response.setHeader("Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE");
+        response.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+        next();
     
         const { paper, entryDate, endDate, openDays, entryValue, exitValue, diference, madeProfit } = request.body;
 
@@ -30,8 +33,11 @@ module.exports = {
 
     list (request, response) {
 
-        response.header("Access-Control-Allow-Origin", "https://trade-back.herokuapp.com/");
-        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        response.header("Access-Control-Allow-Origin", "../../web");
+        response.setHeader("Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE");
+        response.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+        next();
          
        Trade.find(function(err, result) {
             if(err){
@@ -46,8 +52,11 @@ module.exports = {
 
     destroy (request, response) {
 
-        response.header("Access-Control-Allow-Origin", "https://trade-back.herokuapp.com/");
-        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        response.header("Access-Control-Allow-Origin", "../../web");
+        response.setHeader("Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE");
+        response.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+        next();
 
         Trade.findOneAndDelete({_id:request.params.id}, (err, result) => {
             if(err){
@@ -62,8 +71,11 @@ module.exports = {
 
     edit (request, response){
 
-        response.header("Access-Control-Allow-Origin", "https://trade-back.herokuapp.com/");
-        response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        response.header("Access-Control-Allow-Origin", "../../web");
+        response.setHeader("Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE");
+        response.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+        next();
 
         const { paper, entryDate, endDate, openDays, entryValue, exitValue, diference, madeProfit } = request.body;
 

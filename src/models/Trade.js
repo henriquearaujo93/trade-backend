@@ -8,7 +8,7 @@ const TradeSchema = new mongoose.Schema({
     entryValue: String,
     exitValue: String,
     diference: String,
-    madeProfit: Boolean,
+    madeProfit: String,
 });
 
 module.exports = mongoose.model('Trade', TradeSchema);
